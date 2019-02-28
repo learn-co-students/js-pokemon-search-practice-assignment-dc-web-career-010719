@@ -5,9 +5,4 @@ document.addEventListener('DOMContentLoaded', () => {
     app.setState({filterTerm: e.target.value})
   })
 
-  fetch('http://localhost:3000/pokemon')
-  .then(res => res.json())
-  .then(pokemonArray => {
-    app.setState({allPokemon: pokemonArray})
-  })
 })

@@ -4,6 +4,15 @@ class App {
       allPokemon: [],
       filterTerm: ""
     }
+    this.componentDidMount()
+  }
+
+  componentDidMount(){
+    fetch('http://localhost:3000/pokemon')
+    .then(res => res.json())
+    .then(pokemonArray => {
+      app.setState({allPokemon: pokemonArray})
+    })
   }
 
   setState(newState){
