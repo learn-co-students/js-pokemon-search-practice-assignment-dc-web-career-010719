@@ -25,10 +25,10 @@ class App {
   }
 
   render(){
-    let subArray = this.state.allPokemon.filter(pokemonObj => pokemonObj.name.includes(this.state.filterTerm))
+    let filteredPokemon = this.state.allPokemon.filter(pokemonObj => pokemonObj.name.includes(this.state.filterTerm))
     return (`
       <div>${
-        subArray.map(pokemonObj => {
+        filteredPokemon.map(pokemonObj => {
           let pokemonInstance = new PokemonCard(pokemonObj)
           return pokemonInstance.render()
         }).join("")
