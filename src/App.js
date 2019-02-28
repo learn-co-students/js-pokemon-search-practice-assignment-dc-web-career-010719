@@ -26,10 +26,13 @@ class App {
 
   render(){
     let subArray = this.state.allPokemon.filter(pokemonObj => pokemonObj.name.includes(this.state.filterTerm))
-    let dom = subArray.map(pokemonObj => {
-      let pokemonInstance = new PokemonCard(pokemonObj)
-      return pokemonInstance.render()
-    })
-    return dom.join("")
+    return (`
+      <div>${
+        subArray.map(pokemonObj => {
+          let pokemonInstance = new PokemonCard(pokemonObj)
+          return pokemonInstance.render()
+        }).join("")
+      }</div>
+    `)
   }
 }

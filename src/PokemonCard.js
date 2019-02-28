@@ -6,7 +6,7 @@ class PokemonCard{
   }
 
   render(){
-    return `
+    return (`
       <div class="pokemon-card">
         <div class="pokemon-frame">
           <h1 class="center-text">${this.name}</h1>
@@ -15,6 +15,6 @@ class PokemonCard{
           </div>
         </div>
       </div>
-    `
+    `)
   }
 }
